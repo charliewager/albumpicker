@@ -6,14 +6,14 @@ import edit_album_list
 def main():
     
     while(1):
-        choice = int(input("What would you like to do?\nEnter 1 for your album selection or 2 to edit album list: "))
+        choice = input("What would you like to do?\nEnter 1 for your album selection or 2 to edit album list: ")
 
-        if choice == 1:
+        if int(choice) == 1:
             
             album = select_album.select_album()
             print(album)
 
-        elif choice == 2:
+        elif int(choice) == 2:
             
             edit_album_list.edit()
 

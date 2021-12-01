@@ -6,10 +6,18 @@ def edit():
 
     if choice[:3] == 'add':
         
+        print("Enter done when you are finished adding albums (no need for add: prefix)")
         album_list = open("albums.txt", 'a')
         albm_to_add = choice[4:]
-        album_list.write('\n' + albm_to_add)
-        
+        album_list.write(albm_to_add + '\n')
+
+        while 1:
+            
+            next_a = input()
+            if next_a == 'done':
+                break
+            
+            album_list.write(next_a + '\n')
 
     elif choice[:7] == 'display':
         
