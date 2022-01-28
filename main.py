@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-import select_album
-import edit_album_list
+from support import select_album, edit_album_list
 
 
 def main():

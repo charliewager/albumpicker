@@ -2,8 +2,8 @@
 
 import random
 
-def select_album():
 
+def select_album():
     albums_file = open("albums.txt")
 
     album_list = []
@@ -14,9 +14,9 @@ def select_album():
     if length == 0:
         print("ADD ALBUMS TO THE LIST FIRST")
         exit(0)
-    
+
     random.seed()
     idx = random.randint(0, (length - 1))
-    
+
     albums_file.close()
     return album_list[idx]
