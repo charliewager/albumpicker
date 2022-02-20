@@ -19,4 +19,12 @@ def select_album():
     idx = random.randint(0, (length - 1))
 
     albums_file.close()
+
+    item = album_list[idx]
+    dashIDX = item.rfind('-')
+    if dashIDX > 35:
+        firstHalf = item[:(dashIDX - 1)]
+        secondHalf = item[(dashIDX + 1):]
+        return firstHalf + '\n' + secondHalf
+
     return album_list[idx]
