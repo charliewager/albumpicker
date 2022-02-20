@@ -27,14 +27,15 @@ def main():
     def add_act():
         toAdd = usrbox.get()
         edit_album_list.add(toAdd)
-        display.configure(text="Added " + toAdd)
+        usrbox.delete(0, END)
+        display.configure(text="Added " + toAdd, font=("Arial", 12))
         usrbox.grid(row=1, column=1, padx=10)
         choice2.grid(row=1, column=2, padx=10)
         back.configure(command=editList)
 
     def remove_arrange():
         display.configure(text="What would you like to remove?\n(please provide album names in a name - artist format)", font=("Arial", 15))
-        choice2.configure(text="Add", width=3, command=remove_act)
+        choice2.configure(text="Remove", width=7, command=remove_act)
         usrbox.grid(row=1, column=1, padx=10)
         choice1.grid_forget()
         choice2.grid(row=1, column=2, padx=10)
@@ -43,8 +44,10 @@ def main():
 
     def remove_act():
         toRemove = usrbox.get()
-        edit_album_list.add(toRemove)
-        display.configure(text="Removed " + toRemove)
+        edit_album_list.remove(toRemove)
+        usrbox.delete(0, END)
+        display.configure(text="Removed " + toRemove, font=("Arial", 12))
+        choice2.configure(text= "Remove", width=7)
         usrbox.grid(row=1, column=1, padx=10)
         choice2.grid(row=1, column=2, padx=10)
         back.configure(command=editList)
