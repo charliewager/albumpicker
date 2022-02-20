@@ -2,7 +2,7 @@
 
 def add(input):
     # print("Enter done when you are finished adding albums (please provide album names in a name - artist format):")
-    album_file = open("albums.txt", 'a')
+    album_file = open("list.txt", 'a')
 
     # while 1:
     #
@@ -17,7 +17,7 @@ def add(input):
 
 def remove(to_remove):
     # print("Enter done when you are finished removing albums (provide names in the same format you added them in):")
-    album_file = open("albums.txt")
+    album_file = open("list.txt")
     line_list = []
     for line in album_file:
         line_list.append(line)
@@ -42,12 +42,12 @@ def remove(to_remove):
     for line in updated_list:
 
         if i == 0:
-            album_file = open("albums.txt", "w")
+            album_file = open("list.txt", "w")
             album_file.write(line)
             album_file.close()
 
         else:
-            album_file = open("albums.txt", "a")
+            album_file = open("list.txt", "a")
             album_file.write(line)
             album_file.close()
 
@@ -56,10 +56,10 @@ def remove(to_remove):
 
 def display():
 
-    album_file = open("albums.txt")
-    displayString = []
+    album_file = open("list.txt")
+    displayString = ""
     for line in album_file:
-        displayString.append(line)
+        displayString += line
 
     album_file.close()
     return displayString
@@ -74,7 +74,7 @@ def display():
     #
     # elif choice[:7] == 'display':
     #
-    #     album_file = open("albums.txt")
+    #     album_file = open("list.txt")
     #     for line in album_file:
     #         print(line)
     #
